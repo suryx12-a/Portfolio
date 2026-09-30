@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>Suriya Prakash | Software Engineer &amp; ECE Portfolio</title>
+  <meta name="description" content="Official portfolio of Suriya Prakash, ECE student and aspiring Software Engineer specializing in Python, DSA, IoT, Embedded Systems, and AI/ML.">
+  <meta name="keywords" content="Suriya Prakash, Software Engineer, ECE, Coimbatore, Python, DSA, IoT, ESP32, Embedded Systems, Portfolio">
+  <meta name="author" content="Suriya Prakash">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Suriya Prakash | Portfolio">
+  <meta property="og:description" content="Electronics and Communication Engineering student with strong interests in software development, embedded systems, and emerging technologies.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080d1a'/><text x='50%' y='62%' font-size='50' font-weight='800' fill='%2300f0ff' font-family='sans-serif' text-anchor='middle'>SP</text></svg>">
+</head>
+<body class="dark-theme">
+
+  <!-- Background Particle Canvas & Ambient Orbs -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Cursor Light Follower (Desktop only) -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper" id="navbar">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="#hero" class="nav-logo" id="nav-logo" aria-label="Suriya Prakash Home">
+        <span class="logo-symbol">&lt;</span>
+        <span class="logo-name">Suriya</span>
+        <span class="logo-dot">.</span>
+        <span class="logo-role">dev</span>
+        <span class="logo-symbol">/&gt;</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
+        <li><a href="#leetcode" class="nav-link" data-section="leetcode">LeetCode</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <!-- Resume Button with Dropdown Selector & Mobile Toggle -->
+      <div class="nav-actions">
+        <div class="resume-dropdown-wrap">
+          <button class="btn btn-outline btn-sm nav-resume-btn" id="nav-resume-btn" aria-haspopup="true" aria-expanded="false">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Resume ▾</span>
+          </button>
+          <div class="resume-dropdown-menu" id="resume-menu">
+            <a href="assets/resume-it.pdf" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+              <span class="dropdown-item-title">💻 Software / IT Resume</span>
+              <span class="dropdown-item-sub">Software Dev, Python, DSA</span>
+            </a>
+            <a href="assets/resume-ece.pdf" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+              <span class="dropdown-item-title">⚡ ECE &amp; Embedded Resume</span>
+              <span class="dropdown-item-sub">IoT, Microcontrollers, Firmware</span>
+            </a>
+          </div>
+        </div>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+      <ul class="mobile-links">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#education" class="mobile-link">Education</a></li>
+        <li><a href="#certifications" class="mobile-link">Certifications</a></li>
+        <li><a href="#leetcode" class="mobile-link">LeetCode</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="assets/resume-it.pdf" class="btn btn-primary btn-block mb-2" target="_blank" rel="noopener noreferrer">
+          Download IT Resume (PDF)
+        </a>
+        <a href="assets/resume-ece.pdf" class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">
+          Download ECE Resume (PDF)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-content reveal-on-scroll">
+          <div class="badge hero-badge">
+            <span class="badge-pulse"></span>
+            <span>FINAL YEAR ECE STUDENT</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Suriya Prakash</span>
+          </h1>
+
+          <div class="typewriter-container" aria-label="Roles">
+            <span class="typewriter-prefix">I am a </span>
+            <span class="typewriter-text" id="typewriter"></span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            I build practical software, IoT, and embedded solutions while continuously improving my programming and problem-solving skills.
+          </p>
+
+          <!-- Action Buttons (With Dual Resume Support) -->
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary" id="btn-view-projects">
+              <span>View My Projects</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            
+            <div class="hero-resume-group">
+              <a href="assets/resume-it.pdf" class="btn btn-glass" id="btn-download-resume-it" target="_blank" rel="noopener noreferrer" title="Software / IT Resume">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>IT Resume</span>
+              </a>
+              <a href="assets/resume-ece.pdf" class="btn btn-outline" id="btn-download-resume-ece" target="_blank" rel="noopener noreferrer" title="ECE & Embedded Resume">
+                <span>ECE Resume</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Icons & Contact Links -->
+          <div class="hero-socials">
+            <span class="socials-label">Connect:</span>
+            <div class="social-links-row">
+              <!-- GitHub -->
+              <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile" id="hero-github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span class="social-tooltip">GitHub</span>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com/in/suriyaprakash-k" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile" id="hero-linkedin-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span class="social-tooltip">LinkedIn</span>
+              </a>
+
+              <!-- LeetCode -->
+              <a href="https://leetcode.com/u/suriya567/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LeetCode Profile" id="hero-leetcode-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.607 2.6 2.6 0 0 1 .612-.558l4.181-4.472 4.908-5.263c.532-.57.51-1.453-.05-1.996a1.378 1.378 0 0 0-.968-.42zM19.98 10.457H9.278a1.38 1.38 0 0 0 0 2.76h10.702a1.38 1.38 0 0 0 0-2.76z"/>
+                </svg>
+                <span class="social-tooltip">LeetCode</span>
+              </a>
+
+              <!-- Email -->
+              <a href="mailto:suryx12@gmail.com" class="social-icon-btn" aria-label="Send Email" id="hero-email-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span class="social-tooltip">suryx12@gmail.com</span>
+              </a>
+
+              <!-- Phone -->
+              <a href="tel:+916374673797" class="social-icon-btn" aria-label="Call Suriya" id="hero-phone-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span class="social-tooltip">+91 6374673797</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual: Real User Photo with Cybernetic Glow & 3D Tilt -->
+        <div class="hero-visual reveal-on-scroll">
+          <div class="profile-card-3d" id="profile-card-tilt">
+            <div class="profile-glow-ring"></div>
+            <div class="profile-cyber-orbit">
+              <span class="orbit-node node-1"></span>
+              <span class="orbit-node node-2"></span>
+              <span class="orbit-node node-3"></span>
+            </div>
+
+            <!-- Real Profile Image Frame -->
+            <div class="profile-image-wrapper">
+              <img 
+                src="assets/profile.png" 
+                alt="Suriya Prakash K - Electronics &amp; Communication Engineering Student" 
+                class="profile-img" 
+                id="profile-img"
+                loading="eager"
+              />
+            </div>
+
+            <!-- Floating Status Badge -->
+            <div class="floating-badge status-badge" id="hero-status-badge">
+              <span class="status-dot"></span>
+              <div class="status-text-wrap">
+                <span class="status-title">Open to Opportunities</span>
+                <span class="status-sub">Software Dev &amp; IoT Roles</span>
+              </div>
+            </div>
+
+            <!-- Floating Tech Tag -->
+            <div class="floating-badge tech-badge">
+              <span class="tech-icon">⚡</span>
+              <span>Python • DSA • IoT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==================== AI VOICE INTRODUCTION COMPONENT ==================== -->
+      <div class="container voice-intro-container reveal-on-scroll">
+        <div class="voice-card glass-panel" id="voice-intro-card">
+          
+          <div class="voice-card-header">
+            <div class="voice-meta">
+              <div class="voice-badge">
+                <span class="voice-pulse-ring"></span>
+                <span class="voice-badge-text">NORMAL MALE AI VOICE</span>
+              </div>
+              <h2 class="voice-card-title">Interactive Voice Overview</h2>
+            </div>
+            
+            <button class="voice-play-btn" id="voice-play-btn" aria-label="Listen to Suriya's Voice Introduction">
+              <span class="btn-audio-icon" id="audio-icon-state">
+                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              </span>
+              <span id="voice-btn-label">🎙 Listen to My Introduction</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Audio Waveform Equalizer -->
+          <div class="waveform-wrapper">
+            <div class="waveform-visualizer" id="waveform-visualizer" aria-hidden="true">
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+              <div class="wave-bar"></div>
+            </div>
+            
+            <div class="audio-time-row">
+              <span class="audio-status-tag" id="audio-status-tag">Ready to Play (Male AI Voice)</span>
+              <span class="audio-timer" id="audio-timer">0:00 / 0:24</span>
+            </div>
+          </div>
+
+          <!-- Audio Transcript Toggle & Content -->
+          <div class="voice-transcript-wrapper">
+            <div class="transcript-header">
+              <span class="transcript-title">Voice Transcript:</span>
+              <span class="transcript-chip">Natural Speech</span>
+            </div>
+            <p class="transcript-text" id="intro-transcript-text">
+              "Hi, I’m Suriya Prakash, an Electronics and Communication Engineering student with a strong interest in software development, embedded systems, and emerging technologies. I have hands-on experience with Python, C, HTML, microcontrollers, and IoT, and I’ve worked on projects including an IoT-based LPG Gas Leakage Detection System and a multilingual call translation assistant. I’m continuously improving my programming, problem-solving, and technical skills through projects, coding practice, and learning. I’m currently looking for opportunities where I can apply my skills, learn from experienced professionals, and contribute to real-world projects. Thank you for visiting my portfolio!"
+            </p>
+          </div>
+
+          <!-- Audio Element with male AI synthesized voice -->
+          <audio id="intro-audio" preload="metadata">
+            <source src="assets/intro.mp3" type="audio/mpeg">
+            <source src="assets/intro.wav" type="audio/wav">
+            Your browser does not support audio element.
+          </audio>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ME SECTION ==================== -->
+    <section class="section-padding" id="about">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">01. ABOUT ME</span>
+          <h2 class="section-title">Engineering Mindset &amp; Passion</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- About Narrative -->
+          <div class="about-narrative glass-panel reveal-on-scroll">
+            <div class="terminal-bar">
+              <div class="terminal-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="terminal-title">suriya_prakash.profile</span>
+            </div>
+            
+            <div class="about-content-body">
+              <p class="about-lead">
+                I am an Electronics and Communication Engineering student with a strong interest in software development, embedded systems, and emerging technologies.
+              </p>
+              <p class="about-sub">
+                I have hands-on experience with Python, C, HTML, microcontrollers, and IoT, and I’ve worked on projects including an IoT-based LPG Gas Leakage Detection System, ESP32-CAM Smart Bluetooth Lock, and a multilingual call translation assistant.
+              </p>
+              <p class="about-sub">
+                I’m continuously improving my programming, problem-solving, and technical skills through projects, coding practice, and learning. I’m currently looking for opportunities where I can apply my skills, learn from experienced professionals, and contribute to real-world projects.
+              </p>
+            </div>
+
+            <!-- Quick Matrix Chips -->
+            <div class="about-meta-pills">
+              <div class="meta-pill">
+                <span class="meta-icon">🎓</span>
+                <span class="meta-label">B.E. ECE • SNS College of Eng.</span>
+              </div>
+              <div class="meta-pill">
+                <span class="meta-icon">📍</span>
+                <span class="meta-label">Coimbatore, Tamil Nadu</span>
+              </div>
+              <div class="meta-pill">
+                <span class="meta-icon">💼</span>
+                <span class="meta-label">Software Dev &amp; IoT Roles</span>
+              </div>
+              <div class="meta-pill">
+                <span class="meta-icon">🏆</span>
+                <span class="meta-label">LeetCode 50-Day Badge</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 Interactive Pillars -->
+          <div class="about-pillars">
+            
+            <!-- Pillar 1: Problem Solver -->
+            <div class="pillar-card glass-panel reveal-on-scroll" data-pillar="solver">
+              <div class="pillar-icon-box cyan-glow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h3 class="pillar-title">Problem Solver</h3>
+                <p class="pillar-desc">
+                  Applying structured Data Structures, algorithmic optimization, and clean logic in Python and C to solve computational problems.
+                </p>
+                <div class="pillar-tags">
+                  <span>DSA</span>
+                  <span>Python Logic</span>
+                  <span>Debugging</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pillar 2: Continuous Learner -->
+            <div class="pillar-card glass-panel reveal-on-scroll" data-pillar="learner">
+              <div class="pillar-icon-box purple-glow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h3 class="pillar-title">Continuous Learner</h3>
+                <p class="pillar-desc">
+                  Dedicated to daily LeetCode coding consistency, completing verified certifications in AI, Machine Learning, and Cloud Fundamentals.
+                </p>
+                <div class="pillar-tags">
+                  <span>LeetCode Daily</span>
+                  <span>AI / ML</span>
+                  <span>ServiceNow</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pillar 3: Technology Enthusiast -->
+            <div class="pillar-card glass-panel reveal-on-scroll" data-pillar="enthusiast">
+              <div class="pillar-icon-box emerald-glow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h3 class="pillar-title">Technology Enthusiast</h3>
+                <p class="pillar-desc">
+                  Interfacing ESP32 and Arduino microcontrollers with sensors, wireless telemetry, and real-time automation software.
+                </p>
+                <div class="pillar-tags">
+                  <span>IoT Cloud</span>
+                  <span>ESP32-CAM</span>
+                  <span>Industrial Telemetry</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section-padding section-alt" id="skills">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">02. TECHNICAL SKILLS</span>
+          <h2 class="section-title">Tools &amp; Technologies</h2>
+          <p class="section-subtitle">Categorized skills across software, embedded engineering, developer tooling, and data analytics.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="skills-filter-tabs reveal-on-scroll" role="tablist" aria-label="Skills categories">
+          <button class="skill-tab-btn active" data-filter="all" role="tab" aria-selected="true">All Skills</button>
+          <button class="skill-tab-btn" data-filter="programming" role="tab" aria-selected="false">Programming</button>
+          <button class="skill-tab-btn" data-filter="embedded" role="tab" aria-selected="false">Embedded &amp; IoT</button>
+          <button class="skill-tab-btn" data-filter="tools" role="tab" aria-selected="false">Tools &amp; IDEs</button>
+          <button class="skill-tab-btn" data-filter="data" role="tab" aria-selected="false">Python &amp; Data</button>
+        </div>
+
+        <!-- Skills Cards Grid -->
+        <div class="skills-grid" id="skills-grid">
+          
+          <!-- Programming: Python -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="programming data">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap cyan">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.006 2.752h5.804v.826H3.88S0 5.79 0 11.968c0 6.18 3.4 5.957 3.4 5.957h2.03v-2.86s-.11-3.4 3.344-3.4h5.75v-.844h-8.08s-.016-1.782 0-2.422h8.08V3.53S14.93 0 11.914 0zm-1.74 1.703a.922.922 0 1 1 0 1.844.922.922 0 0 1 0-1.844zM12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.006-2.752H11.99v-.826h8.13s3.88.444 3.88-5.734c0-6.18-3.4-5.957-3.4-5.957h-2.03v2.86s.11 3.4-3.344 3.4H9.47v.844h8.08s.016 1.782 0 2.422H9.47V20.47s-.41 3.53 2.616 3.53zm1.74-1.703a.922.922 0 1 1 0-1.844.922.922 0 0 1 0 1.844z"/>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Programming</span>
+            </div>
+            <h3 class="skill-title">Python</h3>
+            <p class="skill-desc">Core programming, OOP, data structures, automation scripts, and application logic.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Core Language</span>
+            </div>
+          </div>
+
+          <!-- Programming: C -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="programming embedded">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap blue">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 21.6c-5.302 0-9.6-4.298-9.6-9.6S6.698 2.4 12 2.4s9.6 4.298 9.6 9.6-4.298 9.6-9.6 9.6zm4.8-13.2h-3.6c-2.651 0-4.8 2.149-4.8 4.8s2.149 4.8 4.8 4.8h3.6v-2.4h-3.6c-1.325 0-2.4-1.075-2.4-2.4s1.075-2.4 2.4-2.4h3.6V8.4z"/>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Programming</span>
+            </div>
+            <h3 class="skill-title">C</h3>
+            <p class="skill-desc">Low-level systems programming, memory management, pointers, and embedded firmware.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Systems &amp; Embedded</span>
+            </div>
+          </div>
+
+          <!-- Programming: HTML & CSS -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="programming">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap orange">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M1.5 0h21l-1.91 21.463L11.977 24l-8.564-2.538L1.5 0zm7.031 9.75l-.232-2.718 10.059-.001.23-2.697H5.566l.69 8.113h9.631l-.337 3.73-3.573.964-3.571-.965-.228-2.56H5.485l.448 5.034 6.044 1.677 6.052-1.677.838-9.87H8.531z"/>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Web Tech</span>
+            </div>
+            <h3 class="skill-title">HTML &amp; CSS</h3>
+            <p class="skill-desc">Semantic document structures, modern responsive layouts, and UI component styling.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Frontend Basics</span>
+            </div>
+          </div>
+
+          <!-- Programming: Data Structures & Algorithms -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="programming">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="5" r="3"></circle>
+                  <circle cx="5" cy="19" r="3"></circle>
+                  <circle cx="19" cy="19" r="3"></circle>
+                  <line x1="7.5" y1="17" x2="10.5" y2="7.5"></line>
+                  <line x1="16.5" y1="17" x2="13.5" y2="7.5"></line>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Algorithms</span>
+            </div>
+            <h3 class="skill-title">Data Structures &amp; Algorithms</h3>
+            <p class="skill-desc">Arrays, Strings, Linked Lists, Trees, Stacks, Queues, Sorting, Searching, and Complexity Optimization.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Problem Solving</span>
+            </div>
+          </div>
+
+          <!-- Embedded: ESP32 -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="embedded">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="4"></rect>
+                  <path d="M7 10h10M7 14h10M12 7v10"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Microcontroller</span>
+            </div>
+            <h3 class="skill-title">ESP32 &amp; ESP32-CAM</h3>
+            <p class="skill-desc">Dual-core SoC programming, Wi-Fi / Bluetooth BLE connectivity, camera video streaming.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">IoT Hardware</span>
+            </div>
+          </div>
+
+          <!-- Embedded: Arduino -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="embedded">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap emerald">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16.5 6A5.5 5.5 0 0 0 11 11.5c0 .35.04.7.1 1.03A5.5 5.5 0 0 0 7.5 6 5.5 5.5 0 0 0 2 11.5 5.5 5.5 0 0 0 7.5 17a5.5 5.5 0 0 0 3.6-1.33c.27.79.79 1.48 1.48 1.93A5.5 5.5 0 0 0 16.5 17a5.5 5.5 0 0 0 5.5-5.5A5.5 5.5 0 0 0 16.5 6zm-9 9a3.5 3.5 0 0 1-3.5-3.5A3.5 3.5 0 0 1 7.5 8c1.33 0 2.47.74 3.06 1.83-.34.52-.56 1.12-.56 1.67 0 .55.22 1.15.56 1.67A3.49 3.49 0 0 1 7.5 15zm9 0a3.49 3.49 0 0 1-3.06-1.83c.34-.52.56-1.12.56-1.67 0-.55-.22-1.15-.56-1.67A3.49 3.49 0 0 1 16.5 8a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5z"/>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Prototyping</span>
+            </div>
+            <h3 class="skill-title">Arduino</h3>
+            <p class="skill-desc">Rapid hardware prototyping, C++ sketch development, sensor calibration, and PWM actuation.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Embedded Dev</span>
+            </div>
+          </div>
+
+          <!-- Embedded: PIC Microcontrollers -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="embedded">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <circle cx="8" cy="8" r="1"></circle>
+                  <line x1="8" y1="12" x2="16" y2="12"></line>
+                  <line x1="8" y1="16" x2="14" y2="16"></line>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Hardware</span>
+            </div>
+            <h3 class="skill-title">PIC Microcontrollers</h3>
+            <p class="skill-desc">Register configuration, timer interrupts, ADC conversions, and embedded C architectures.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Microcontrollers</span>
+            </div>
+          </div>
+
+          <!-- Embedded: Sensors & IoT -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="embedded">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap orange">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Connected Systems</span>
+            </div>
+            <h3 class="skill-title">Sensors &amp; IoT</h3>
+            <p class="skill-desc">MQ-2 gas sensors, GSM modules, relays, industrial telemetry, and hardware troubleshooting.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Hardware Integration</span>
+            </div>
+          </div>
+
+          <!-- Tools: Git & GitHub -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap orange">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2.6 10.59L8.38 4.8a1.37 1.37 0 0 1 1.94 0l1.46 1.46-2.14 2.14a1.83 1.83 0 0 0-1.78 2.25L5.7 12.81a1.84 1.84 0 1 0 1.34 1.33l2.07-2.07a1.83 1.83 0 0 0 2.26-1.76l2.13-2.13 7.89 7.89a1.37 1.37 0 0 1 0 1.94l-5.79 5.79a1.37 1.37 0 0 1-1.94 0L2.6 12.53a1.37 1.37 0 0 1 0-1.94z"/>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Version Control</span>
+            </div>
+            <h3 class="skill-title">Git &amp; GitHub</h3>
+            <p class="skill-desc">Branching workflows, commits, pull requests, and collaborative repository management.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Dev Workflow</span>
+            </div>
+          </div>
+
+          <!-- Tools: VS Code & Antigravity -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Development IDE</span>
+            </div>
+            <h3 class="skill-title">VS Code &amp; Antigravity</h3>
+            <p class="skill-desc">Modern coding environments, debugging tools, extensions, and AI-assisted workflows.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Modern Tooling</span>
+            </div>
+          </div>
+
+          <!-- Tools: Arduino IDE, Keil, Proteus & Wokwi -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="tools embedded">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap emerald">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Simulation &amp; Compilers</span>
+            </div>
+            <h3 class="skill-title">Keil, Proteus &amp; Wokwi</h3>
+            <p class="skill-desc">Circuit simulation with Proteus, Keil µVision embedded debugging, and Arduino IDE firmware upload.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Simulation &amp; Debug</span>
+            </div>
+          </div>
+
+          <!-- Python/Data: NumPy, Pandas, Matplotlib -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="data programming">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Data Science</span>
+            </div>
+            <h3 class="skill-title">NumPy, Pandas &amp; Matplotlib</h3>
+            <p class="skill-desc">Matrix computations, tabular data manipulation with DataFrames, and scientific visualization plots.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Data Analytics</span>
+            </div>
+          </div>
+
+          <!-- Tools: MySQL & Databases -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="tools data">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Database</span>
+            </div>
+            <h3 class="skill-title">MySQL</h3>
+            <p class="skill-desc">Relational database queries, table relationships, schemas, and data management.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Relational Database</span>
+            </div>
+          </div>
+
+          <!-- Tools: Jupyter Notebook -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-category="tools data">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap orange">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+                  <circle cx="12" cy="7" r="1.5"/>
+                  <circle cx="7" cy="15" r="1.5"/>
+                  <circle cx="17" cy="15" r="1.5"/>
+                </svg>
+              </div>
+              <span class="skill-category-badge">Data Tools</span>
+            </div>
+            <h3 class="skill-title">Jupyter Notebook</h3>
+            <p class="skill-desc">Interactive python experimentation, data cleaning pipelines, and algorithm benchmarking.</p>
+            <div class="skill-level-indicator">
+              <span class="level-chip">Interactive Computing</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section-padding" id="projects">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">03. FEATURED WORK</span>
+          <h2 class="section-title">Engineered Projects</h2>
+          <p class="section-subtitle">Real-world applications spanning IoT telemetry, smart embedded security, speech processing AI, and software tools.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <!-- Project Filter Controls -->
+        <div class="projects-filter-bar reveal-on-scroll">
+          <button class="project-filter-btn active" data-filter="all">All Projects (6)</button>
+          <button class="project-filter-btn" data-filter="iot">IoT &amp; Embedded</button>
+          <button class="project-filter-btn" data-filter="python">Python &amp; AI</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- PROJECT 1: LPG Gas Leakage Detection System -->
+          <article class="project-card glass-panel reveal-on-scroll" data-category="iot" data-project-id="lpg">
+            <div class="project-media-wrap">
+              <img src="assets/projects/lpg-detector.jpg" alt="LPG Gas Leakage Detection System" class="project-img" loading="lazy">
+              <div class="project-badge-float">IoT Safety System</div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tech-tag">ESP32 / Microcontroller</span>
+                <span class="tech-tag">MQ-2</span>
+                <span class="tech-tag">GSM</span>
+                <span class="tech-tag">Relay</span>
+                <span class="tech-tag">IoT</span>
+              </div>
+              <h3 class="project-title">LPG Gas Leakage Detection System</h3>
+              <p class="project-desc">
+                IoT-based safety system designed to detect LPG gas leakage using an MQ-2 gas sensor and provide alerts through a microcontroller and GSM communication.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass" aria-label="GitHub repository for LPG Gas Leakage Detection">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary project-modal-trigger" data-modal="lpg">
+                  <span>View Details</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: ESP32-CAM Smart Bluetooth Lock -->
+          <article class="project-card glass-panel reveal-on-scroll" data-category="iot" data-project-id="lock">
+            <div class="project-media-wrap">
+              <img src="assets/projects/esp32-cam-lock.jpg" alt="ESP32-CAM Smart Bluetooth Lock" class="project-img" loading="lazy">
+              <div class="project-badge-float">Smart Security</div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tech-tag">ESP32-CAM</span>
+                <span class="tech-tag">Bluetooth</span>
+                <span class="tech-tag">Embedded C</span>
+                <span class="tech-tag">IoT</span>
+              </div>
+              <h3 class="project-title">ESP32-CAM Smart Bluetooth Lock</h3>
+              <p class="project-desc">
+                A smart security system using ESP32-CAM and Bluetooth-based control for electronic locking, mobile access authorization, and visitor capture.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass" aria-label="GitHub repository for ESP32-CAM Smart Bluetooth Lock">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary project-modal-trigger" data-modal="lock">
+                  <span>View Details</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: ESP32 Wi-Fi Digital Clock -->
+          <article class="project-card glass-panel reveal-on-scroll" data-category="iot" data-project-id="clock">
+            <div class="project-media-wrap">
+              <img src="assets/projects/esp32-clock.jpg" alt="ESP32 Wi-Fi Digital Clock" class="project-img" loading="lazy">
+              <div class="project-badge-float">Networked Hardware</div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tech-tag">ESP32</span>
+                <span class="tech-tag">Wi-Fi</span>
+                <span class="tech-tag">NTP</span>
+                <span class="tech-tag">I2C LCD</span>
+                <span class="tech-tag">Arduino IDE</span>
+              </div>
+              <h3 class="project-title">ESP32 Wi-Fi Digital Clock</h3>
+              <p class="project-desc">
+                Wi-Fi enabled digital clock using NTP time synchronization and an I2C LCD display.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass" aria-label="GitHub repository for ESP32 Wi-Fi Digital Clock">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary project-modal-trigger" data-modal="clock">
+                  <span>View Details</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: Smart Home IoT System -->
+          <article class="project-card glass-panel reveal-on-scroll" data-category="iot" data-project-id="smarthome">
+            <div class="project-media-wrap">
+              <img src="assets/projects/smart-home.jpg" alt="Smart Home IoT System" class="project-img" loading="lazy">
+              <div class="project-badge-float">Automation &amp; Control</div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tech-tag">ESP32</span>
+                <span class="tech-tag">IoT</span>
+                <span class="tech-tag">Sensors</span>
+                <span class="tech-tag">Automation</span>
+              </div>
+              <h3 class="project-title">Smart Home IoT System</h3>
+              <p class="project-desc">
+                An IoT-based home automation system designed to control and monitor home appliances using a microcontroller and connected devices.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass" aria-label="GitHub repository for Smart Home IoT System">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary project-modal-trigger" data-modal="smarthome">
+                  <span>View Details</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: Multilingual Call Translation Assistant -->
+          <article class="project-card glass-panel reveal-on-scroll" data-category="python" data-project-id="translator">
+            <div class="project-media-wrap">
+              <img src="assets/projects/call-translator.jpg" alt="Multilingual Call Translation Assistant" class="project-img" loading="lazy">
+              <div class="project-badge-float">Speech AI &amp; NLP</div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Speech Processing</span>
+                <span class="tech-tag">Translation</span>
+                <span class="tech-tag">AI</span>
+              </div>
+              <h3 class="project-title">Multilingual Call Translation Assistant</h3>
+              <p class="project-desc">
+                A Python-based application designed to translate incoming Hindi voice communication into Tamil using speech processing and language translation technologies.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass" aria-label="GitHub repository for Multilingual Call Translation Assistant">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary project-modal-trigger" data-modal="translator">
+                  <span>View Details</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 6: Personal Expense Tracker -->
+          <article class="project-card glass-panel reveal-on-scroll" data-category="python" data-project-id="expense">
+            <div class="project-media-wrap">
+              <img src="assets/projects/expense-tracker.svg" alt="Personal Expense Tracker" class="project-img" loading="lazy">
+              <div class="project-badge-float">Python Application</div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Functions</span>
+                <span class="tech-tag">Lists</span>
+                <span class="tech-tag">Dictionaries</span>
+              </div>
+              <h3 class="project-title">Personal Expense Tracker</h3>
+              <p class="project-desc">
+                A Python-based console application for recording, viewing, calculating, and deleting personal expenses with structured category summaries.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass" aria-label="GitHub repository for Personal Expense Tracker">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <span>Code</span>
+                </a>
+                <button class="btn btn-sm btn-primary project-modal-trigger" data-modal="expense">
+                  <span>View Details</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE SECTION ==================== -->
+    <section class="section-padding section-alt" id="experience">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">04. PRACTICAL TRAINING</span>
+          <h2 class="section-title">Experience &amp; Internships</h2>
+          <p class="section-subtitle">Real-world industry exposure in web engineering, embedded firmware systems, IoT monitoring, and workflow platforms.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Timeline Item 1: Web Dev Intern -->
+          <div class="timeline-card-wrapper left reveal-on-scroll">
+            <div class="timeline-dot">
+              <span class="dot-inner"></span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-header">
+                <span class="timeline-badge">Web Development</span>
+                <span class="timeline-location">Aug 2024 • Coimbatore</span>
+              </div>
+              <h3 class="timeline-role">Web Development Intern</h3>
+              <h4 class="timeline-company">Let's GameTech</h4>
+              <p class="timeline-desc">
+                Learned HTML and website development by building responsive web pages and understanding web development fundamentals. Developed and enhanced website features while collaborating with mentors to improve user experience.
+              </p>
+              <div class="timeline-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Responsive UI</span>
+                <span>Frontend Concepts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: Embedded Systems Intern -->
+          <div class="timeline-card-wrapper right reveal-on-scroll">
+            <div class="timeline-dot">
+              <span class="dot-inner"></span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-header">
+                <span class="timeline-badge emerald">Embedded Systems</span>
+                <span class="timeline-location">Jun 2025 • Coimbatore</span>
+              </div>
+              <h3 class="timeline-role">Embedded Systems Intern</h3>
+              <h4 class="timeline-company">Techvolt Software</h4>
+              <p class="timeline-desc">
+                Gained practical experience in microcontroller programming, circuit design, and sensor integration using Arduino and C. Worked on real-time embedded applications involving communication, data transfer, and hardware-software integration.
+              </p>
+              <div class="timeline-tags">
+                <span>Embedded C</span>
+                <span>Arduino</span>
+                <span>Microcontrollers</span>
+                <span>Sensors</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: Industrial IoT Intern -->
+          <div class="timeline-card-wrapper left reveal-on-scroll">
+            <div class="timeline-dot">
+              <span class="dot-inner"></span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-header">
+                <span class="timeline-badge cyan">Industrial IoT</span>
+                <span class="timeline-location">Dec 2025 - Jul 2026 • Coimbatore</span>
+              </div>
+              <h3 class="timeline-role">Industrial IoT Intern</h3>
+              <h4 class="timeline-company">Design Edge</h4>
+              <p class="timeline-desc">
+                Developed IoT applications using ESP32 by integrating sensors for real-time monitoring and automation. Tested, debugged, and optimized IoT systems to ensure reliable hardware-software communication.
+              </p>
+              <div class="timeline-tags">
+                <span>ESP32</span>
+                <span>IoT Monitoring</span>
+                <span>Sensor Networks</span>
+                <span>Telemetry</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4: ServiceNow Virtual Intern -->
+          <div class="timeline-card-wrapper right reveal-on-scroll">
+            <div class="timeline-dot">
+              <span class="dot-inner"></span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-header">
+                <span class="timeline-badge purple">Platform &amp; Cloud</span>
+                <span class="timeline-location">Jan 2026 • Virtual</span>
+              </div>
+              <h3 class="timeline-role">ServiceNow Virtual Intern</h3>
+              <h4 class="timeline-company">ServiceNow</h4>
+              <p class="timeline-desc">
+                Completed a virtual internship focused on ServiceNow platform fundamentals, ITSM concepts, and workflow automation. Gained hands-on experience with application development and incident management.
+              </p>
+              <div class="timeline-tags">
+                <span>ServiceNow</span>
+                <span>ITSM</span>
+                <span>Workflow Automation</span>
+                <span>Cloud Platform</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION SECTION ==================== -->
+    <section class="section-padding" id="education">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">05. ACADEMIC BACKGROUND</span>
+          <h2 class="section-title">Education</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="education-card-wrap max-w-2xl reveal-on-scroll">
+          <div class="education-card glass-panel">
+            <div class="education-glow"></div>
+            
+            <div class="edu-top-row">
+              <div class="edu-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div class="edu-status-badge">
+                <span class="badge-pulse"></span>
+                <span>B.E - ECE (2023 - 2027)</span>
+              </div>
+            </div>
+
+            <h3 class="edu-degree">Bachelor of Engineering</h3>
+            <h4 class="edu-major gradient-text">Electronics and Communication Engineering</h4>
+            <div class="edu-institution-row">
+              <span class="edu-college">SNS College of Engineering</span>
+              <span class="edu-city">• Coimbatore, Tamil Nadu</span>
+            </div>
+
+            <div class="edu-key-highlights">
+              <div class="highlight-item">
+                <span class="highlight-bullet">▹</span>
+                <span><strong>Academic Standing:</strong> CGPA: 7.8 (Pursuing) • 2023 – 2027</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-bullet">▹</span>
+                <span><strong>Schooling:</strong> Ramakrishna Mission Matric Higher Secondary School • HSC: 83% (Mar 2023)</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-bullet">▹</span>
+                <span><strong>Core Focus:</strong> Software Engineering, Python &amp; DSA, Microprocessors, Embedded Computing, IoT Systems, and AI/ML.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS SECTION ==================== -->
+    <section class="section-padding section-alt" id="certifications">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">06. CREDENTIALS</span>
+          <h2 class="section-title">Certifications</h2>
+          <p class="section-subtitle">Verified professional learning in Artificial Intelligence, Machine Learning, Python, and Embedded Systems.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="certifications-grid">
+          
+          <!-- Cert 1: Microsoft Azure AI Fundamentals -->
+          <div class="cert-card glass-panel reveal-on-scroll">
+            <div class="cert-header">
+              <div class="cert-icon-box azure">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.05 4.24l-3.23 8.3-4.57 3.53H.02l9.04-12.06c.71-.95 2.1-.92 2.76.04l1.23.19zm2.44 6.79l-4.14 5.34 2.11 3.51c.64 1.07 2.18 1.15 2.93.15l7.53-10.12-8.43 1.12z"/>
+                </svg>
+              </div>
+              <span class="cert-org-badge">Microsoft</span>
+            </div>
+            <h3 class="cert-name">Microsoft Azure AI Fundamentals (AI-900)</h3>
+            <p class="cert-issuer">Microsoft Certified • June 2025</p>
+            <div class="cert-footer">
+              <span class="cert-topic-tag">Cloud &amp; AI</span>
+              <span class="cert-verified-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Verified</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Cert 2: NPTEL Machine Learning -->
+          <div class="cert-card glass-panel reveal-on-scroll">
+            <div class="cert-header">
+              <div class="cert-icon-box nptel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <span class="cert-org-badge">NPTEL / IIT</span>
+            </div>
+            <h3 class="cert-name">Machine Learning</h3>
+            <p class="cert-issuer">NPTEL Certification • Sep 2025</p>
+            <div class="cert-footer">
+              <span class="cert-topic-tag">ML Algorithms</span>
+              <span class="cert-verified-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Verified</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Cert 3: IBM AI Foundations / Practitioner -->
+          <div class="cert-card glass-panel reveal-on-scroll">
+            <div class="cert-header">
+              <div class="cert-icon-box ibm">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M0 4h7v2H0V4zm0 4h7v2H0V8zm0 4h7v2H0v-2zm0 4h7v2H0v-2zm0 4h7v2H0v-2zm8.5-16h7v2h-7V4zm0 4h7v2h-7V8zm0 4h7v2h-7v-2zm0 4h7v2h-7v-2zm0 4h7v2h-7v-2zm8.5-16H24v2h-7V4zm0 4H24v2h-7V8zm0 4H24v2h-7v-2zm0 4H24v2h-7v-2zm0 4H24v2h-7v-2z"/>
+                </svg>
+              </div>
+              <span class="cert-org-badge">IBM</span>
+            </div>
+            <h3 class="cert-name">IBM AI Foundations</h3>
+            <p class="cert-issuer">IBM Skills Network</p>
+            <div class="cert-footer">
+              <span class="cert-topic-tag">Artificial Intelligence</span>
+              <span class="cert-verified-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Verified</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Cert 4: IBM Lifelong Professional Skills -->
+          <div class="cert-card glass-panel reveal-on-scroll">
+            <div class="cert-header">
+              <div class="cert-icon-box ibm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <span class="cert-org-badge">IBM</span>
+            </div>
+            <h3 class="cert-name">IBM Lifelong Professional Skills</h3>
+            <p class="cert-issuer">IBM Skills Network • Aug 2026</p>
+            <div class="cert-footer">
+              <span class="cert-topic-tag">Professional Skills</span>
+              <span class="cert-verified-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Verified</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Cert 5: Python Programming - PrepInsta -->
+          <div class="cert-card glass-panel reveal-on-scroll">
+            <div class="cert-header">
+              <div class="cert-icon-box embedded">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <line x1="9" y1="9" x2="15" y2="15"></line>
+                  <line x1="15" y1="9" x2="9" y2="15"></line>
+                </svg>
+              </div>
+              <span class="cert-org-badge">PrepInsta</span>
+            </div>
+            <h3 class="cert-name">Python Programming</h3>
+            <p class="cert-issuer">PrepInsta Prime Certification</p>
+            <div class="cert-footer">
+              <span class="cert-topic-tag">Python &amp; Logic</span>
+              <span class="cert-verified-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Verified</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LEETCODE SECTION ==================== -->
+    <section class="section-padding" id="leetcode">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">07. CODING METRICS</span>
+          <h2 class="section-title">LeetCode Dashboard</h2>
+          <p class="section-subtitle">Consistent problem solving, algorithmic challenges, and daily DSA practice.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="leetcode-dashboard glass-panel reveal-on-scroll">
+          
+          <!-- Top Bar -->
+          <div class="leetcode-top-bar">
+            <div class="leetcode-user-info">
+              <div class="leetcode-avatar">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.607 2.6 2.6 0 0 1 .612-.558l4.181-4.472 4.908-5.263c.532-.57.51-1.453-.05-1.996a1.378 1.378 0 0 0-.968-.42zM19.98 10.457H9.278a1.38 1.38 0 0 0 0 2.76h10.702a1.38 1.38 0 0 0 0-2.76z"/>
+                </svg>
+              </div>
+              <div class="leetcode-handles">
+                <span class="leetcode-handle">@suriya567</span>
+                <span class="leetcode-rank-tag">Active Problem Solver • 50-Day Badge</span>
+              </div>
+            </div>
+
+            <a href="https://leetcode.com/u/suriya567/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" id="leetcode-view-btn">
+              <span>View LeetCode Profile</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Middle Stats Cards -->
+          <div class="leetcode-stats-row">
+            
+            <!-- 50-Day Badge Feature -->
+            <div class="leetcode-badge-card">
+              <div class="badge-icon-trophy">
+                <span class="trophy-glow"></span>
+                🏆
+              </div>
+              <div class="badge-card-info">
+                <span class="badge-card-tag">Official Recognition</span>
+                <h3 class="badge-card-title">LeetCode 50-Day Badge</h3>
+                <p class="badge-card-desc">Awarded for 50+ consecutive days of algorithm practice, problem solving, and analytical coding.</p>
+              </div>
+            </div>
+
+            <!-- Focus Domains -->
+            <div class="leetcode-domains-card">
+              <h4 class="domains-title">DSA Focus Areas &amp; Achievements</h4>
+              <div class="domains-chips-grid">
+                <span class="domain-chip">Arrays &amp; Hashing</span>
+                <span class="domain-chip">Two Pointers</span>
+                <span class="domain-chip">Binary Search</span>
+                <span class="domain-chip">Linked Lists</span>
+                <span class="domain-chip">Trees &amp; Traversal</span>
+                <span class="domain-chip">CREONIX Ideathon</span>
+                <span class="domain-chip">Stack / Queue</span>
+                <span class="domain-chip">Sorting &amp; Searching</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Coding Heatmap Simulation -->
+          <div class="leetcode-heatmap-container">
+            <div class="heatmap-header">
+              <span class="heatmap-title">Consistent Submission Activity</span>
+              <span class="heatmap-legend">
+                <span>Less</span>
+                <i class="heat-box lvl-0"></i>
+                <i class="heat-box lvl-1"></i>
+                <i class="heat-box lvl-2"></i>
+                <i class="heat-box lvl-3"></i>
+                <i class="heat-box lvl-4"></i>
+                <span>More</span>
+              </span>
+            </div>
+            <div class="heatmap-grid" id="heatmap-grid" aria-label="LeetCode Streak Heatmap"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== GITHUB SECTION ==================== -->
+    <section class="section-padding section-alt" id="github-section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">08. OPEN SOURCE &amp; CODE</span>
+          <h2 class="section-title">GitHub Activity</h2>
+          <p class="section-subtitle">Exploration of code repositories, IoT firmware scripts, and software utilities.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="github-dashboard glass-panel reveal-on-scroll">
+          
+          <div class="github-profile-row">
+            <div class="github-user-meta">
+              <div class="github-icon-box">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="github-username">suryx12-a</h3>
+                <p class="github-user-bio">Python • Embedded C • IoT • Systems Development</p>
+              </div>
+            </div>
+
+            <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="github-cta-btn">
+              <span>Follow on GitHub</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Featured Repository Mini Cards -->
+          <div class="featured-repos-grid">
+            
+            <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="repo-card glass-panel">
+              <div class="repo-header">
+                <div class="repo-name-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                  <span class="repo-title">IoT-LPG-Detection-System</span>
+                </div>
+                <span class="repo-vis">Public</span>
+              </div>
+              <p class="repo-desc">ESP32 firmware integrating MQ-2 sensor with GSM SMS alert triggers &amp; safety relay disconnect.</p>
+              <div class="repo-footer">
+                <span class="repo-lang"><span class="lang-color c-color"></span> Embedded C</span>
+                <span class="repo-topic">ESP32</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="repo-card glass-panel">
+              <div class="repo-header">
+                <div class="repo-name-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                  <span class="repo-title">Hindi-Tamil-Voice-Translator</span>
+                </div>
+                <span class="repo-vis">Public</span>
+              </div>
+              <p class="repo-desc">Python speech processing engine translating live Hindi vocal input into Tamil audio output.</p>
+              <div class="repo-footer">
+                <span class="repo-lang"><span class="lang-color python-color"></span> Python</span>
+                <span class="repo-topic">Speech AI</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="repo-card glass-panel">
+              <div class="repo-header">
+                <div class="repo-name-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                  <span class="repo-title">python-expense-tracker</span>
+                </div>
+                <span class="repo-vis">Public</span>
+              </div>
+              <p class="repo-desc">Modular Python application managing expense records, budget calculations, and categorical summaries.</p>
+              <div class="repo-footer">
+                <span class="repo-lang"><span class="lang-color python-color"></span> Python</span>
+                <span class="repo-topic">CLI Tool</span>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CURRENTLY LEARNING SECTION ==================== -->
+    <section class="section-padding" id="learning">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">09. CONTINUOUS UPSKILLING</span>
+          <h2 class="section-title">Currently Learning</h2>
+          <p class="section-subtitle">Dedicated roadmap of subjects currently being explored and deepened.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="learning-grid">
+          
+          <!-- Learning Card 1: Python -->
+          <div class="learning-card glass-panel reveal-on-scroll">
+            <div class="learning-header">
+              <div class="learning-icon-circle cyan">🐍</div>
+              <span class="learning-status-pill">Active Focus</span>
+            </div>
+            <h3 class="learning-title">Python</h3>
+            <p class="learning-desc">Mastering advanced OOP patterns, concurrency, asynchronous workflows, and building modular clean codebases.</p>
+            <div class="learning-focus-tags">
+              <span>OOP Architecture</span>
+              <span>Asyncio</span>
+              <span>Design Patterns</span>
+            </div>
+          </div>
+
+          <!-- Learning Card 2: DSA -->
+          <div class="learning-card glass-panel reveal-on-scroll">
+            <div class="learning-header">
+              <div class="learning-icon-circle blue">🌲</div>
+              <span class="learning-status-pill">Active Practice</span>
+            </div>
+            <h3 class="learning-title">DSA</h3>
+            <p class="learning-desc">Deepening knowledge in recursion, dynamic programming, backtracking, and algorithmic optimization patterns.</p>
+            <div class="learning-focus-tags">
+              <span>Dynamic Programming</span>
+              <span>Recursion Trees</span>
+              <span>Space-Time Tradeoffs</span>
+            </div>
+          </div>
+
+          <!-- Learning Card 3: Advanced Problem Solving -->
+          <div class="learning-card glass-panel reveal-on-scroll">
+            <div class="learning-header">
+              <div class="learning-icon-circle purple">🧩</div>
+              <span class="learning-status-pill">Daily Grind</span>
+            </div>
+            <h3 class="learning-title">Advanced Problem Solving</h3>
+            <p class="learning-desc">Targeting medium-to-hard algorithmic scenarios, two-pointer window optimizations, and bitwise manipulations.</p>
+            <div class="learning-focus-tags">
+              <span>Sliding Window</span>
+              <span>Bit Manipulation</span>
+              <span>Greedy Heuristics</span>
+            </div>
+          </div>
+
+          <!-- Learning Card 4: Graph Algorithms -->
+          <div class="learning-card glass-panel reveal-on-scroll">
+            <div class="learning-header">
+              <div class="learning-icon-circle emerald">🌐</div>
+              <span class="learning-status-pill">In Progress</span>
+            </div>
+            <h3 class="learning-title">Graph Algorithms</h3>
+            <p class="learning-desc">Studying Breadth-First Search (BFS), Depth-First Search (DFS), Dijkstra's shortest path, Topological Sort, and Disjoint Sets.</p>
+            <div class="learning-focus-tags">
+              <span>BFS &amp; DFS</span>
+              <span>Dijkstra</span>
+              <span>Topological Sort</span>
+            </div>
+          </div>
+
+          <!-- Learning Card 5: Software Development -->
+          <div class="learning-card glass-panel reveal-on-scroll">
+            <div class="learning-header">
+              <div class="learning-icon-circle orange">💻</div>
+              <span class="learning-status-pill">Expanding</span>
+            </div>
+            <h3 class="learning-title">Software Development</h3>
+            <p class="learning-desc">Exploring scalable backend system architecture, RESTful API design, database schemas, and clean software engineering practices.</p>
+            <div class="learning-focus-tags">
+              <span>REST APIs</span>
+              <span>Clean Code</span>
+              <span>System Design Basics</span>
+            </div>
+          </div>
+
+          <!-- Learning Card 6: AI/ML -->
+          <div class="learning-card glass-panel reveal-on-scroll">
+            <div class="learning-header">
+              <div class="learning-icon-circle cyan">🤖</div>
+              <span class="learning-status-pill">Exploring</span>
+            </div>
+            <h3 class="learning-title">AI/ML</h3>
+            <p class="learning-desc">Understanding fundamental neural networks, NLP pipelines, speech synthesis models, and deploying lightweight AI on edge devices.</p>
+            <div class="learning-focus-tags">
+              <span>NLP Pipelines</span>
+              <span>TinyML / Edge AI</span>
+              <span>Model Evaluation</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CAREER GOAL SECTION ==================== -->
+    <section class="section-padding section-alt" id="career">
+      <div class="container">
+        
+        <div class="career-goal-card glass-panel reveal-on-scroll">
+          <div class="career-glow-bg"></div>
+          
+          <div class="section-header text-center">
+            <span class="section-tag">10. VISION &amp; ASPIRATION</span>
+            <h2 class="section-title">Where I'm Heading</h2>
+            <div class="title-underline"></div>
+          </div>
+
+          <blockquote class="career-statement">
+            "My goal is to start my career in a technology-focused organization where I can contribute to real-world projects, strengthen my software and engineering skills, and continuously grow as a professional."
+          </blockquote>
+
+          <!-- Animated Roadmap Nodes -->
+          <div class="roadmap-wrapper">
+            <div class="roadmap-track">
+              <div class="roadmap-fill"></div>
+            </div>
+
+            <div class="roadmap-nodes-row">
+              
+              <!-- Node 1: ECE -->
+              <div class="roadmap-node active">
+                <div class="node-marker">
+                  <span class="node-num">01</span>
+                </div>
+                <div class="node-label">ECE</div>
+                <div class="node-sub">Hardware &amp; Circuit Fundamentals</div>
+              </div>
+
+              <!-- Node 2: Programming -->
+              <div class="roadmap-node active">
+                <div class="node-marker">
+                  <span class="node-num">02</span>
+                </div>
+                <div class="node-label">Programming</div>
+                <div class="node-sub">Python, C &amp; Core DSA Logic</div>
+              </div>
+
+              <!-- Node 3: Projects -->
+              <div class="roadmap-node active">
+                <div class="node-marker">
+                  <span class="node-num">03</span>
+                </div>
+                <div class="node-label">Projects</div>
+                <div class="node-sub">IoT Telemetry &amp; Software Tools</div>
+              </div>
+
+              <!-- Node 4: Internship -->
+              <div class="roadmap-node active">
+                <div class="node-marker">
+                  <span class="node-num">04</span>
+                </div>
+                <div class="node-label">Internships</div>
+                <div class="node-sub">Web, Embedded &amp; IoT Industry</div>
+              </div>
+
+              <!-- Node 5: Career -->
+              <div class="roadmap-node next-target">
+                <div class="node-marker pulsing-target">
+                  <span class="node-num">05</span>
+                </div>
+                <div class="node-label gradient-text">Career</div>
+                <div class="node-sub">Software / Embedded Engineer</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section-padding" id="contact">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">11. GET IN TOUCH</span>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">Interested in discussing software engineering opportunities, internships, or technical collaborations? Feel free to reach out directly!</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Left: Contact Details Cards -->
+          <div class="contact-info-col reveal-on-scroll">
+            
+            <div class="contact-card glass-panel">
+              <div class="contact-card-icon cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <span class="contact-card-label">Direct Email</span>
+                <a href="mailto:suryx12@gmail.com" class="contact-card-value" id="contact-email-val">suryx12@gmail.com</a>
+              </div>
+              <button class="copy-btn" id="copy-email-btn" title="Copy email address" aria-label="Copy Email">
+                <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span class="copy-text">Copy</span>
+              </button>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-card-icon emerald">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <span class="contact-card-label">Phone &amp; WhatsApp</span>
+                <a href="tel:+916374673797" class="contact-card-value">+91 6374673797</a>
+              </div>
+              <a href="tel:+916374673797" class="btn btn-sm btn-outline">Call</a>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-card-icon blue">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <span class="contact-card-label">LinkedIn Profile</span>
+                <a href="https://linkedin.com/in/suriyaprakash-k" target="_blank" rel="noopener noreferrer" class="contact-card-value">linkedin.com/in/suriyaprakash-k</a>
+              </div>
+              <a href="https://linkedin.com/in/suriyaprakash-k" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="Open LinkedIn">Connect</a>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-card-icon purple">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="contact-card-details">
+                <span class="contact-card-label">GitHub Profile</span>
+                <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="contact-card-value">github.com/suryx12-a</a>
+              </div>
+              <a href="https://github.com/suryx12-a" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="Open GitHub">View</a>
+            </div>
+
+          </div>
+
+          <!-- Right: Interactive Quick Message Form -->
+          <div class="contact-form-col reveal-on-scroll">
+            <div class="contact-form-card glass-panel">
+              <h3 class="form-title">Send a Direct Message</h3>
+              <p class="form-subtitle">Fill out the form below to send an immediate inquiry to Suriya.</p>
+
+              <form id="portfolio-contact-form" class="portfolio-form" novalidate>
+                <div class="form-group">
+                  <label for="form-name">Your Name</label>
+                  <input type="text" id="form-name" class="form-input" placeholder="e.g. John Doe / Hiring Manager" required>
+                  <span class="form-error" id="name-error">Please enter your name.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-email">Your Email</label>
+                  <input type="email" id="form-email" class="form-input" placeholder="e.g. recruiter@company.com" required>
+                  <span class="form-error" id="email-error">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-subject">Subject</label>
+                  <input type="text" id="form-subject" class="form-input" placeholder="e.g. Software Engineer Role / Project Inquiry" required>
+                  <span class="form-error" id="subject-error">Please enter a subject.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-message">Message</label>
+                  <textarea id="form-message" class="form-textarea" rows="4" placeholder="Hi Suriya, we reviewed your portfolio and would like to discuss..." required></textarea>
+                  <span class="form-error" id="message-error">Please enter your message.</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                  <span>Send Message</span>
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer-wrapper">
+    <div class="container footer-container">
+      
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">
+            <span class="logo-symbol">&lt;</span>
+            <span class="logo-name">Suriya Prakash</span>
+            <span class="logo-symbol">/&gt;</span>
+          </a>
+          <p class="footer-tagline">
+            Electronics &amp; Communication Engineering | Aspiring Software Engineer
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <ul class="footer-nav">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 Suriya Prakash. All rights reserved. Built for professional recruitment.
+        </p>
+        <button class="back-to-top-btn" id="back-to-top" aria-label="Scroll to top of page">
+          <span>Back to Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+  <div class="modal-backdrop" id="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-project-title">
+    <div class="modal-card glass-panel" id="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+      
+      <div class="modal-body" id="modal-project-content">
+        <!-- Content injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
